@@ -1,0 +1,164 @@
+# This is an example config containing information for the preselection
+
+ntuple_path: NTUPLE_TAG
+friends: [JETFAKES_TAG]
+event_split: EVENT_SPLIT_TAG
+output_path: "/ceph/rschmieder/WH_analysis/NN_analysis/DATE_TAG"
+era: "2018"
+channel: "met"
+tree: "ntuple"
+
+
+processes:
+    ggZZ:
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "GluGluToContinToZZTo2e2mu_TuneCP5_13TeV-mcfm701-pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "GluGluToContinToZZTo2e2tau_TuneCP5_13TeV-mcfm701-pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "GluGluToContinToZZTo2mu2tau_TuneCP5_13TeV-mcfm701-pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "GluGluToContinToZZTo4e_TuneCP5_13TeV-mcfm701-pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "GluGluToContinToZZTo4mu_TuneCP5_13TeV-mcfm701-pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "GluGluToContinToZZTo4tau_TuneCP5_13TeV-mcfm701-pythia8_RunIISummer20UL18NanoAODv9-106X"
+
+    ggZH: 
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "GluGluZH_HToWW_ZTo2L_M-125_TuneCP5_13TeV-powheg-pythia8_RunIISummer20UL18NanoAODv9-106X"
+    ZH: 
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "HZJ_HToWW_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "ZHToTauTau_M125_CP5_13TeV-powheg-pythia8_RunIISummer20UL18NanoAODv9-106X"
+    rem_ttbar:
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "ttZJets_TuneCP5_13TeV_madgraphMLM_pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8_RunIISummer20UL18NanoAODv9-106X"
+    triboson:
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "WZZ_TuneCP5_13TeV-amcatnlo-pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "ZZZ_TuneCP5_13TeV-amcatnlo-pythia8_RunIISummer20UL18NanoAODv9-106X"
+    diboson:
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "ZZTo4L_TuneCP5_13TeV_powheg_pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "WZTo3LNu_TuneCP5_13TeV-amcatnloFXFX-pythia8_RunIISummer20UL18NanoAODv9-106X"
+            - "WZTo2Q2L_mllmin4p0_TuneCP5_13TeV-amcatnloFXFX-pythia8_RunIISummer20UL18NanoAODv9-106X"
+    WH_htt_plus:
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "WplusHToTauTau_M125_TuneCP5_13TeV-powheg-pythia8_RunIISummer20UL18NanoAODv9-106X"
+    WH_htt_minus:
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "WminusHToTauTau_M125_TuneCP5_13TeV-powheg-pythia8_RunIISummer20UL18NanoAODv9-106X"
+    WH_hww_plus:
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "HWplusJ_HToWW_M-125_TuneCP5_13TeV-powheg-jhugen727-pythia8_RunIISummer20UL18NanoAODv9-106X"
+    WH_hww_minus:
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "WminusHToTauTau_M125_TuneCP5_13TeV-powheg-pythia8_RunIISummer20UL18NanoAODv9-106X"
+    tau_fakes:
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "SingleMuon_Run2018A-UL2018"
+            - "SingleMuon_Run2018B-UL2018"
+            - "SingleMuon_Run2018C-UL2018"
+            - "SingleMuon_Run2018D-UL2018"
+    lep_fakes:
+        tau_gen_modes:
+            - "all"
+        samples:
+            - "SingleMuon_Run2018A-UL2018"
+            - "SingleMuon_Run2018B-UL2018"
+            - "SingleMuon_Run2018C-UL2018"
+            - "SingleMuon_Run2018D-UL2018"
+
+general_event_selection:
+    tau_id_vs_ele: "id_tau_vsEle_Loose_3 > 0.5"
+    tau_id_vs_mu: "id_tau_vsMu_Loose_3 > 0.5"
+    ele_pt: "pt_1 > 15"
+    mu_pt: "pt_2 > 15"
+    single_trigger: "(((trg_single_mu27 == 1)&&pt_1>27) || ((trg_single_mu24 == 1)&&pt_1<=27&&pt_1>25))"
+    mu_iso: "iso_1 < 0.15"
+    mu_id: "muon_is_mediumid_1>0.5"
+    b_veto: "nbtag<0.5"
+    os: "q_2*q_3<0.0"
+    ss: "q_1*q_2>0.0"
+
+
+special_event_selection:
+    tau_id_vs_jet: ["id_tau_vsJet_Loose_3 > 0.5", "(id_tau_vsJet_VVVLoose_3 > 0.5) && (id_tau_vsJet_Loose_3 < 0.5)"]
+    ele_2_idiso: ["electron_is_nonisowp90_2 > 0.5 && iso_2<0.15","((iso_2<0.5 && iso_2>0.15) || electron_is_nonisowp90_2<0.5)"]
+mc_weights:
+    # general weights: string is passed directly as weight
+    pileup: "puweight"
+    mu_iso: "(iso_wgt_mu_1*(iso_1<0.15)+1.*(iso_1>0.15))"
+    mu_id: "id_wgt_mu_1"
+    ele_iso: "(iso_wgt_ele_2*(iso_2<0.15)+1.*((iso_2<0.5 && iso_2>0.15)))"
+    ele_id: "id_wgt_ele_wp90nonIso_2"
+    tau_id_wgt_vs_ele: "(gen_match_3==5) * ((id_tau_vsEle_Loose_3>0.5)*id_wgt_tau_vsEle_Loose_3 + (id_tau_vsEle_Loose_3<0.5)) + (gen_match_3!=5)"
+    tau_id_wgt_vs_mu: "(gen_match_3==5) * ((id_tau_vsMu_Loose_3>0.5)*id_wgt_tau_vsMu_Loose_3 + (id_tau_vsMu_Loose_3<0.5)) + (gen_match_3!=5)"
+    tau_id_wgt_vs_jet: "((gen_match_3==5)*((id_tau_vsJet_Loose_3>0.5)*id_wgt_tau_vsJet_Loose_3 + (id_tau_vsJet_Loose_3<0.5&&id_tau_vsJet_VVVLoose_3>0.5)*1.0) + (gen_match_3!=5))"
+    single_trigger: "trg_wgt_single_ele32orele35"
+    
+    # special weights: these are not generally applied, e.g. only for a specific process or era
+    # here the string is a needed information to apply the weight -> see corresponding functions
+    generator: "stitching"
+    lumi: ""
+    Z_pt_reweighting: "ZPtMassReweightWeight"
+    Top_pt_reweighting: "topPtReweightWeight"
+
+output_feature:
+    - "weight"
+    - "era_2016preVFP"
+    - "era_2016postVFP"
+    - "era_2017"
+    - "era_2018"
+    - "pt_3"
+    - "decaymode_3"
+    - "eta_3"
+    - "phi_3"
+    - "deltaR_13"
+    - "deltaR_23"
+    - "deltaR_12"
+    - "pt_1"
+    - "eta_1"
+    - "phi_1"
+    - "pt_2"
+    - "eta_2"
+    - "phi_2"
+    - "m_vis"
+    - "Lt"
+    - "met"
+    - "m_tt"
+    - "mjj"
+    - "mt_1"
+    - "mt_2"
+    - "mt_3"
+    - "pt_vis"
+    - "pt_W"
+    - "metphi"
+    - "njets"
+    - "jpt_1"
+    - "jpt_2"
+    - "jeta_1" 
+    - "jeta_2"
+    - "jphi_1"
+    - "jphi_2"

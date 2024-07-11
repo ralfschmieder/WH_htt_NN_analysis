@@ -5,6 +5,7 @@ Script for preprocessing n-tuples for the neural network training
 import os
 import argparse
 import yaml
+import json
 import multiprocessing
 
 from io import StringIO
@@ -265,8 +266,8 @@ if __name__ == "__main__":
         config = yaml.load(file, yaml.FullLoader)
 
     # loading general dataset info file for xsec and event number
-    with open("datasets/datasets.yaml", "r") as file:
-        datasets = yaml.load(file, yaml.FullLoader)
+    with open("datasets/datasets.json", "r") as file:
+        datasets = json.load(file)
 
     # define output path for the preselected samples
     output_path = os.path.join(

@@ -1,0 +1,14 @@
+signal: ["sig"]
+hidden_layers: [L_TAG,L_TAG]
+dropout_p: 0.3
+features: "wh_htt_ltt"
+classes: "wh_htt_ltt"
+tca: False
+tca_order: 2
+learning_rate: LR_TAG
+L2: 0.001
+batch_size: BATCH_TAG
+early_stopping_patience: 50
+early_stopping_value: 0.1
+one_hot_parametrization: False
+date: DATE_TAG

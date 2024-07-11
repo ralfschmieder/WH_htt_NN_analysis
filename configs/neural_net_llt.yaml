@@ -4,11 +4,11 @@ dropout_p: 0.4
 features: "wh_htt_llt"
 classes: "wh_htt_llt"
 tca: False
-tca_order: 1
+tca_order: 2
 learning_rate: 0.0001
 L2: 0.001
-batch_size: 500
+batch_size: 256
 early_stopping_patience: 50
 early_stopping_value: 0.1
 one_hot_parametrization: False
-date: "22_05_24"
+date: "11_07_24_bestHypermodel_allInputs_loose"

@@ -29,6 +29,13 @@ variables["wh_htt_llt"] = [
     "pt_vis",
     "pt_W",
     "metphi",
+    "njets",
+    "jpt_1",
+    "jpt_2",
+    "jeta_1",
+    "jeta_2",
+    "jphi_1",
+    "jphi_2",
 ]
 variables["wh_htt_ltt"] = [
     "era_2016preVFP",
@@ -58,5 +65,12 @@ variables["wh_htt_ltt"] = [
     "pt_vis",
     "pt_W",
     "metphi",
-    "pt_123met"
+    "pt_123met",
+    "njets",
+    "jpt_1",
+    "jpt_2",
+    "jeta_1",
+    "jeta_2",
+    "jphi_1",
+    "jphi_2",
 ]

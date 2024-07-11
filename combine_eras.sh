@@ -1,8 +1,8 @@
 #bash script to combine all eras of a process for NN input
 ERAS="2016preVFP 2016postVFP 2017 2018"
-DATE="22_05_24"
+DATE="03_07_24_medium"
 EVENT_SPLIT="odd even"
-CHANNELS="mmt emt met mtt ett"
+CHANNELS="met emt mmt ett mtt"
 
 for SPLIT in $EVENT_SPLIT
 do
