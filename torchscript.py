@@ -21,7 +21,7 @@ parser.add_option(
     help="Absolute path to the preselected input data",
     metavar="/ceph/USER/SOME/PATH/FOLDER",
 )
-
+parser.add_option("-t", "--training_tag", type=str, help="name of the training")
 parser.add_option(
     "-c",
     "--config-file",
@@ -117,11 +117,12 @@ workdir = os.getcwd()
 
 savedir = options.savedir
 date = config["date"]
-if not os.path.exists(workdir + f"/workdir_{options.channel}_{date}/" + savedir):
-    os.makedirs(workdir + f"/workdir_{options.channel}_{date}/" + savedir)
+tag = options.training_tag
+if not os.path.exists(workdir + f"/workdir_{options.channel}_{date}_{tag}/" + savedir):
+    os.makedirs(workdir + f"/workdir_{options.channel}_{date}_{tag}/" + savedir)
 with open(
     workdir
-    + f"/workdir_{options.channel}_{date}/"
+    + f"/workdir_{options.channel}_{date}_{tag}/"
     + savedir
     + f"/{options.channel}_feature_transformation_{options.event_split}.json",
     "w",
@@ -137,7 +138,7 @@ net = Network(
     data=data,
     config=config,
     device_to_run=device,
-    save_path=workdir + f"/workdir_{options.channel}_{date}/" + savedir,
+    save_path=workdir + f"/workdir_{options.channel}_{date}_{tag}/" + savedir,
 )
 
 net.train(epochs=int(options.epochs))

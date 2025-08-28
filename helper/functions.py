@@ -147,9 +147,15 @@ def check_for_empty_tree(file_path: str, tree: str) -> bool:
         Boolean which is true if the file is empty, false otherwise.
     """
     f = ROOT.TFile.Open(file_path)
-    t = f.Get(tree)
+    is_empty = False
+    if "ntuple" not in [x.GetTitle() for x in f.GetListOfKeys()]:
+        is_empty = True
+    elif "ntuple" in [x.GetTitle() for x in f.GetListOfKeys()]:
+        t = f.Get(tree)
+        if t.GetEntries() == 0:
+            is_empty = True
 
-    return bool(t.GetEntries() == 0)
+    return bool(is_empty)
 
 
 def rdf_is_empty(rdf: ROOT.RDataFrame) -> bool:

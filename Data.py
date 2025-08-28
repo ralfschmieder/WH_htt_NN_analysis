@@ -34,7 +34,7 @@ class Data:
         self.features = feature_list
         self.classes = class_dict.keys()
         print("huhuz")
-        print(self.classes)
+        print(self.features)
         self.file_dict = class_dict
         self.signal = config["signal"]
         self.config = config
@@ -114,7 +114,8 @@ class Data:
             log.info("Standard Transformation")
             st = StandardScaler()
             st.fit(self.df_train[self.features])
-
+            print("Hiiiiiiiiiiiiiiiiiiiii")
+            print(self.features)
             self.transform_feature_dict = dict()
             for idx, feature in enumerate(self.features):
                 self.transform_feature_dict[feature] = {

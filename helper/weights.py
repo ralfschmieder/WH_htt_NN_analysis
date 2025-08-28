@@ -155,12 +155,12 @@ def apply_tau_fake_factors(rdf: Any, channel: str, wp: str = None) -> Any:
     if channel in ["mmt", "emt", "met"]:
         rdf = rdf.Redefine(
             "weight",
-            f"weight * (tau_fakerate_Era*(id_tau_vsJet_Tight_3<0.5&&id_tau_vsJet_VVVLoose_3>0.5))",
+            f"weight * tau_fakerate_Era",
         )
     elif channel in ["mtt", "ett"]:
         rdf = rdf.Redefine(
             "weight",
-            f"weight * tau_fakerate_Era*(((q_1*q_2>0) && id_tau_vsJet_VTight_2<0.5 && id_tau_vsJet_VVVLoose_2>0.5 && id_tau_vsJet_Medium_3>0.5) || ((q_1*q_3>0) && id_tau_vsJet_VTight_3<0.5 && id_tau_vsJet_VVVLoose_3>0.5 && id_tau_vsJet_Medium_2>0.5))",
+            f"weight * tau_fakerate_Era",
         )
     else:
         raise ValueError(

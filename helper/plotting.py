@@ -227,7 +227,7 @@ def confusion(network: Network) -> None:
         confusion_matrix=cm, display_labels=network.data.classes
     )
     fig, ax = plt.subplots(figsize=(10, 10))
-    cm_plot.plot(ax=ax, xticks_rotation=65, colorbar=False)
+    cm_plot.plot(ax=ax, xticks_rotation=65, colorbar=False, cmap="YlGnBu")
     plt.tight_layout()
 
     plt.savefig(network.save_path + "/confusion_matrix.pdf")

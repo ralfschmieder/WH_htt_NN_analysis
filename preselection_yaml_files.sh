@@ -1,10 +1,10 @@
 #bash script to change yaml files to new production
 
-NTUPLE_PATH="root:\/\/cmsdcache-kit-disk.gridka.de\/\/store\/user\/rschmieder\/CROWN\/ntuples\/17_06_24_alleras_allch\/CROWNRun"
-JETFAKES_LTT="jetfakes_wpVSjet_Medium_12_06_24_MediumvsJetvsL"
-JETFAKES_LLT="jetfakes_wpVSjet_Medium_12_06_24_MediumvsJetvsL"
+NTUPLE_PATH="root:\/\/cmsdcache-kit-disk.gridka.de\/\/store\/user\/rschmieder\/CROWN\/ntuples\/28_04_25_nosysts\/CROWNRun"
+JETFAKES_LTT="jetfakes_wpVSjet_Medium_27_02_25_MediumvsJetsvsL"
+JETFAKES_LLT="jetfakes_wpVSjet_Medium_27_02_25_MediumvsJetsvsL"
 EVENT_SPLIT="odd"
-DATE="03_07_24_medium"
+DATE="28_04_25_nosysts_29_04_25_Medium"
 ERAS="2016preVFP 2016postVFP 2017 2018"
 CHANNELS_LLT="met emt mmt"
 CHANNELS_LTT="mtt ett"

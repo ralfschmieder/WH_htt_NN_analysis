@@ -1,9 +1,9 @@
 # This is an example config containing information for the preselection
 
-ntuple_path: root://cmsdcache-kit-disk.gridka.de//store/user/rschmieder/CROWN/ntuples/17_06_24_alleras_allch/CROWNRun
-friends: [jetfakes_wpVSjet_Medium_12_06_24_MediumvsJetvsL]
+ntuple_path: root://cmsdcache-kit-disk.gridka.de//store/user/rschmieder/CROWN/ntuples/28_04_25_nosysts/CROWNRun
+friends: [jetfakes_wpVSjet_Medium_27_02_25_MediumvsJetsvsL]
 event_split: odd
-output_path: "/ceph/rschmieder/WH_analysis/NN_analysis/03_07_24_medium"
+output_path: "/ceph/rschmieder/WH_analysis/NN_analysis/28_04_25_nosysts_29_04_25_Medium"
 era: "2016postVFP"
 channel: "emt"
 tree: "ntuple"
@@ -153,11 +153,13 @@ output_feature:
     - "pt_W"
     - "metphi"
     - "njets"
-    - "deltaPhi_WH"
     - "jpt_1"
     - "jpt_2"
     - "jeta_1" 
     - "jeta_2"
     - "jphi_1"
     - "jphi_2"
+    - "pt_123met"
+    - "electron_is_nonisowp80_1"
+    - "muon_is_tightid_2"
 

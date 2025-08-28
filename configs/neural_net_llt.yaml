@@ -1,9 +1,9 @@
 signal: ["sig"]
-hidden_layers: [1000,1000]
-dropout_p: 0.4
+hidden_layers: [128,128]
+dropout_p: 0.3
 features: "wh_htt_llt"
 classes: "wh_htt_llt"
-tca: False
+tca: false
 tca_order: 2
 learning_rate: 0.0001
 L2: 0.001
@@ -11,4 +11,4 @@ batch_size: 256
 early_stopping_patience: 50
 early_stopping_value: 0.1
 one_hot_parametrization: False
-date: "11_07_24_bestHypermodel_allInputs_loose"
+date: "27_03_25_Medium"

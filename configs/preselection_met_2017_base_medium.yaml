@@ -118,7 +118,7 @@ mc_weights:
     tau_id_wgt_vs_ele: "(gen_match_3==5) * ((id_tau_vsEle_Medium_3>0.5)*id_wgt_tau_vsEle_Medium_3 + (id_tau_vsEle_Medium_3<0.5)) + (gen_match_3!=5)"
     tau_id_wgt_vs_mu: "(gen_match_3==5) * ((id_tau_vsMu_Medium_3>0.5)*id_wgt_tau_vsMu_Medium_3 + (id_tau_vsMu_Medium_3<0.5)) + (gen_match_3!=5)"
     tau_id_wgt_vs_jet: "((gen_match_3==5)*((id_tau_vsJet_Medium_3>0.5)*id_wgt_tau_vsJet_Medium_3 + (id_tau_vsJet_Medium_3<0.5&&id_tau_vsJet_VVVLoose_3>0.5)*1.0) + (gen_match_3!=5))"
-    single_trigger: "(((trg_wgt_single_mu27*(pt_1>27))+(trg_wgt_single_mu24*(pt_1<=27&&pt_1>25)))*(abs(eta_1)<2.4))"
+    single_trigger: "trg_wgt_single_mu24ormu27"
     
     # special weights: these are not generally applied, e.g. only for a specific process or era
     # here the string is a needed information to apply the weight -> see corresponding functions
@@ -164,3 +164,6 @@ output_feature:
     - "jeta_2"
     - "jphi_1"
     - "jphi_2"
+    - "pt_123met"
+    - "electron_is_nonisowp80_2"
+    - "muon_is_tightid_1"

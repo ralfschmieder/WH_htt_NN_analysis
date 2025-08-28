@@ -165,4 +165,7 @@ output_feature:
     - "jeta_2"
     - "jphi_1"
     - "jphi_2"
+    - "pt_123met"
+    - "electron_is_nonisowp80_1"
+    - "muon_is_tightid_2"
 

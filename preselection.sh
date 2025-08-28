@@ -1,6 +1,6 @@
 #bash script to combine all eras of a process for NN input
 ERAS="2016preVFP 2016postVFP 2017 2018"
-CHANNELS="met emt mmt mtt ett"
+CHANNELS="ett met mmt emt mtt"
 
 for CHANNEL in $CHANNELS
 do

@@ -1,9 +1,9 @@
 # This is an example config containing information for the preselection
 
-ntuple_path: root://cmsdcache-kit-disk.gridka.de//store/user/rschmieder/CROWN/ntuples/17_06_24_alleras_allch/CROWNRun
-friends: [jetfakes_wpVSjet_Medium_12_06_24_MediumvsJetvsL]
+ntuple_path: root://cmsdcache-kit-disk.gridka.de//store/user/rschmieder/CROWN/ntuples/28_04_25_nosysts/CROWNRun
+friends: [jetfakes_wpVSjet_Medium_27_02_25_MediumvsJetsvsL]
 event_split: odd
-output_path: "/ceph/rschmieder/WH_analysis/NN_analysis/03_07_24_medium"
+output_path: "/ceph/rschmieder/WH_analysis/NN_analysis/28_04_25_nosysts_29_04_25_Medium"
 era: "2017"
 channel: "mmt"
 tree: "ntuple"
@@ -116,7 +116,7 @@ mc_weights:
     tau_id_wgt_vs_ele: "(gen_match_3==5) * ((id_tau_vsEle_VLoose_3>0.5)*id_wgt_tau_vsEle_VLoose_3 + (id_tau_vsEle_VLoose_3<0.5)) + (gen_match_3!=5)"
     tau_id_wgt_vs_mu: "(gen_match_3==5) * ((id_tau_vsMu_Medium_3>0.5)*id_wgt_tau_vsMu_Medium_3 + (id_tau_vsMu_Medium_3<0.5)) + (gen_match_3!=5)"
     tau_id_wgt_vs_jet: "((gen_match_3==5)*((id_tau_vsJet_Medium_3>0.5)*id_wgt_tau_vsJet_Medium_3 + (id_tau_vsJet_Medium_3<0.5&&id_tau_vsJet_VVVLoose_3>0.5)*1.0) + (gen_match_3!=5))"
-    single_trigger: "((pt_1>=25&&pt_1<=28) * trg_wgt_single_mu24)+(pt_1>28*trg_wgt_single_mu27)"
+    single_trigger: "trg_wgt_single_mu24ormu27"
     
     # special weights: these are not generally applied, e.g. only for a specific process or era
     # here the string is a needed information to apply the weight -> see corresponding functions
@@ -156,10 +156,12 @@ output_feature:
     - "pt_W"
     - "metphi"
     - "njets"
-    - "deltaPhi_WH"
     - "jpt_1"
     - "jpt_2"
     - "jeta_1" 
     - "jeta_2"
     - "jphi_1"
     - "jphi_2"
+    - "pt_123met"
+    - "muon_is_tightid_1"
+    - "muon_is_tightid_2"
